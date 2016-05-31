@@ -41,12 +41,8 @@ function testCombi(player_mov, combi){
 }
 
 function outcome(players, indicator) {
-    //test for tie
-    if((players[0].length + players[1].length) === 9) {
-        return "Tied Game";
-    }
 
-    //test winning combination
+        //test winning combination
     if( testCombi(players[indicator], [1,2,3]) === true ||
         testCombi(players[indicator], [4,5,6]) === true ||
         testCombi(players[indicator], [7,8,9]) === true ||
@@ -58,6 +54,12 @@ function outcome(players, indicator) {
     {
         return "Player " + (indicator+1) + " has won.";
     }
+
+    //test for tie
+    if((players[0].length + players[1].length) === 9) {
+        return "Tied Game";
+    }
+
     return "continue";
 }
 
